@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, FlatList } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { View, Text, YStack, Button, H2 } from "tamagui";
+import { View, Text, YStack, Button, H2, Image } from "tamagui";
 import Topbar from "@/components/home/topbar";
 import { Link } from "expo-router";
 
@@ -10,6 +10,7 @@ interface Service {
   name: string;
   icon: string;
   price: number;
+  image: string;
 }
 
 const ServiceCard = ({
@@ -45,16 +46,86 @@ const ServiceCard = ({
 );
 
 const services: Service[] = [
-  { id: 1, name: "Haircut", icon: "✂️", price: 30 },
-  { id: 2, name: "Hairdo", icon: "💇", price: 45 },
-  { id: 3, name: "Home Cleaning", icon: "🧹", price: 80 },
-  { id: 4, name: "Dry Cleaning", icon: "👚", price: 25 },
-  { id: 5, name: "Furniture Fix", icon: "🪑", price: 60 },
-  { id: 6, name: "Generator Fix", icon: "🔧", price: 70 },
-  { id: 7, name: "Painting", icon: "🎨", price: 100 },
-  { id: 8, name: "Home Decoration", icon: "🏠", price: 120 },
-  { id: 9, name: "Electrician", icon: "⚡", price: 55 },
-  { id: 10, name: "Plumber", icon: "🚰", price: 55 },
+  {
+    id: 1,
+    name: "Haircut",
+    icon: "✂️",
+    price: 30,
+    image:
+      "https://images.unsplash.com/photo-1646054364493-d4b6e3c1f0d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+  },
+  {
+    id: 2,
+    name: "Hairdo",
+    icon: "💇",
+    price: 45,
+    image:
+      "https://images.unsplash.com/photo-1646054364493-d4b6e3c1f0d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+  },
+  {
+    id: 3,
+    name: "Home Cleaning",
+    icon: "🧹",
+    price: 80,
+    image:
+      "https://images.unsplash.com/photo-1646054364493-d4b6e3c1f0d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+  },
+  {
+    id: 4,
+    name: "Dry Cleaning",
+    icon: "👚",
+    price: 25,
+    image:
+      "https://images.unsplash.com/photo-1646054364493-d4b6e3c1f0d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+  },
+  {
+    id: 5,
+    name: "Furniture Fix",
+    icon: "🪑",
+    price: 60,
+    image:
+      "https://images.unsplash.com/photo-1646054364493-d4b6e3c1f0d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+  },
+  {
+    id: 6,
+    name: "Generator Fix",
+    icon: "🔧",
+    price: 70,
+    image:
+      "https://images.unsplash.com/photo-1646054364493-d4b6e3c1f0d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+  },
+  {
+    id: 7,
+    name: "Painting",
+    icon: "🎨",
+    price: 100,
+    image:
+      "https://images.unsplash.com/photo-1646054364493-d4b6e3c1f0d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+  },
+  {
+    id: 8,
+    name: "Home Decoration",
+    icon: "🏠",
+    price: 120,
+    image:
+      "https://images.unsplash.com/photo-1646054364493-d4b6e3c1f0d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+  },
+  {
+    id: 9,
+    name: "Electrician",
+    icon: "⚡",
+    price: 55,
+    image:
+      "https://images.unsplash.com/photo-1646054364493-d4b6e3c1f0d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+  },
+  {
+    id: 10,
+    name: "Plumber",
+    icon: "🚰",
+    price: 55,
+    image:
+      "https://images.unsplash.com/photo-1646054364493-d4b6e3c1f0d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+  },
 ];
 
 export default function HomeScreen() {
@@ -86,6 +157,12 @@ export default function HomeScreen() {
           contentContainerStyle={{ padding: 16 }}
           columnWrapperStyle={{ justifyContent: "space-between" }}
           ItemSeparatorComponent={() => <View style={{ height: 16 }} />}
+        />
+      </View>
+      <View>
+        <Image
+          source={{ uri: selectedService?.image }}
+          style={{ width: "100%", height: 200 }}
         />
       </View>
     </SafeAreaView>

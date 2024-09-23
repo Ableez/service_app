@@ -35,28 +35,28 @@ export default function RootLayout() {
   }
 
   return (
-    <TRPCReactProvider>
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        <TamaguiProvider config={tamaguiConfig} defaultTheme={colorScheme!}>
-          <ThemeProvider
-            value={colorScheme === "dark" ? DarkTheme : DefaultTheme}
-          >
-            <Stack>
-              <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-              <Stack.Screen name="+not-found" />
-              <Stack.Screen
-                name="service/[serviceId]"
-                options={{
-                  headerShown: false,
-                  animation: "slide_from_right",
-                  customAnimationOnGesture: true,
-                  animationDuration: 1000,
-                }}
-              />
-            </Stack>
-          </ThemeProvider>
-        </TamaguiProvider>
-      </GestureHandlerRootView>
-    </TRPCReactProvider>
+    // <TRPCReactProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <TamaguiProvider config={tamaguiConfig} defaultTheme={colorScheme!}>
+        <ThemeProvider
+          value={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+        >
+          <Stack>
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            <Stack.Screen name="+not-found" />
+            <Stack.Screen
+              name="service/[serviceId]"
+              options={{
+                headerShown: false,
+                animation: "slide_from_right",
+                customAnimationOnGesture: true,
+                animationDuration: 1000,
+              }}
+            />
+          </Stack>
+        </ThemeProvider>
+      </TamaguiProvider>
+    </GestureHandlerRootView>
+    // </TRPCReactProvider>
   );
 }

@@ -3,6 +3,8 @@ import { createQueryClient } from "./query-client";
 import { AppRouter } from "./root";
 import {
   createTRPCReact,
+  httpBatchLink,
+  httpLink,
   loggerLink,
   unstable_httpBatchStreamLink,
 } from "@trpc/react-query";
@@ -34,7 +36,7 @@ export const TRPCReactProvider = ({
           enabled: (op) =>
             process.env.NODE_ENV === "development" || op.direction === "down",
         }),
-        unstable_httpBatchStreamLink({
+        httpLink({
           url: "http://localhost:3000/api/trpc",
         }),
       ],
